@@ -1,0 +1,111 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+mbox                0x90              C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+ .comment       0x0000000000000000       0x5b C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+ .text          0x0000000000000000       0x44 C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+ .comment       0x0000000000000000       0x5b C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccAQ4Ww1.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccAQ4Ww1.o
+ .comment       0x0000000000000000       0x5b C:\Users\Renato\AppData\Local\Temp\ccAQ4Ww1.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\cc6dLQBb.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\cc6dLQBb.o
+ .comment       0x0000000000000000       0x5b C:\Users\Renato\AppData\Local\Temp\cc6dLQBb.o
+ .data          0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+ .bss           0x0000000000000000        0x0 C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+ .comment       0x0000000000000000       0x5b C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000080000                . = 0x80000
+
+.text           0x0000000000080000      0x8e4
+ *(.text.boot)
+ .text.boot     0x0000000000080000       0x50 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+                0x0000000000080000                _start
+ *(.text .text.* .gnu.linkonce.t*)
+ .text          0x0000000000080050       0x6c C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+                0x0000000000080050                mbox_call
+ *fill*         0x00000000000800bc        0x4 
+ .text.startup  0x00000000000800c0       0xa8 C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+                0x00000000000800c0                main
+ .text          0x0000000000080168      0x120 C:\Users\Renato\AppData\Local\Temp\ccAQ4Ww1.o
+                0x0000000000080168                wait_cycles
+                0x0000000000080188                wait_msec
+                0x00000000000801d0                get_system_timer
+                0x0000000000080208                wait_msec_st
+ .text          0x0000000000080288      0x23c C:\Users\Renato\AppData\Local\Temp\cc6dLQBb.o
+                0x0000000000080288                uart_init
+                0x0000000000080398                uart_send
+                0x00000000000803c0                uart_getc
+                0x00000000000803f8                _printf
+ *fill*         0x00000000000804c4        0x4 
+ .text          0x00000000000804c8      0x41c C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+                0x00000000000804c8                vsprintf
+                0x0000000000080870                sprintf
+
+.iplt           0x00000000000808e4        0x0
+ .iplt          0x00000000000808e4        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+
+.rodata         0x00000000000808e8       0x27
+ *(.rodata .rodata.* .gnu.linkonce.r*)
+ .rodata.str1.8
+                0x00000000000808e8       0x20 C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+ .rodata.str1.8
+                0x0000000000080908        0x7 C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+                [!provide]                        PROVIDE (_data = .)
+
+.rela.dyn       0x0000000000080910        0x0
+ .rela.iplt     0x0000000000080910        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+ .rela.text.boot
+                0x0000000000080910        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+ .rela.text     0x0000000000080910        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+
+.data
+ *(.data .data.* .gnu.linkonce.d*)
+
+.igot.plt       0x0000000000080910        0x0
+ .igot.plt      0x0000000000080910        0x0 C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+
+.bss            0x0000000000080910       0x90
+                0x0000000000080910                . = ALIGN (0x10)
+                0x0000000000080910                __bss_start = .
+ *(.bss .bss.*)
+ *(COMMON)
+ COMMON         0x0000000000080910       0x90 C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+                0x0000000000080910                mbox
+                0x00000000000809a0                __bss_end = .
+                0x00000000000809a0                _end = .
+
+/DISCARD/
+ *(.comment)
+ *(.gnu*)
+ *(.note*)
+ *(.eh_frame*)
+                0x0000000000000012                __bss_size = ((__bss_end - __bss_start) >> 0x3)
+LOAD C:\Users\Renato\AppData\Local\Temp\ccUMkHiO.o
+LOAD C:\Users\Renato\AppData\Local\Temp\ccd8YWdL.o
+LOAD C:\Users\Renato\AppData\Local\Temp\ccsrFZNU.o
+LOAD C:\Users\Renato\AppData\Local\Temp\ccAQ4Ww1.o
+LOAD C:\Users\Renato\AppData\Local\Temp\cc6dLQBb.o
+LOAD C:\Users\Renato\AppData\Local\Temp\ccwCvltv.o
+LOAD c:/users/renato/desktop/rpi_bm/aarch64_elf/bin/../lib/gcc/aarch64-none-elf/9.2.1\libm.a
+LOAD c:/users/renato/desktop/rpi_bm/aarch64_elf/bin/../lib/gcc/aarch64-none-elf/9.2.1\libc.a
+LOAD c:/users/renato/desktop/rpi_bm/aarch64_elf/bin/../lib/gcc/aarch64-none-elf/9.2.1\libgcc.a
+OUTPUT(kernel8.elf elf64-littleaarch64)

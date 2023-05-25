@@ -1,0 +1,38 @@
+#
+TARGET=kernel8.img
+PATH=C:/Users/Renato/Desktop/rpi_bm/
+
+CROSS=./aarch64_elf/bin/aarch64-none-elf-
+CC=$(CROSS)gcc
+CFLAGS=-Wall -O2 -ffreestanding -nostdlib -fno-stack-protector -nostdinc -nostartfiles
+
+INCS=$(PATH)inc
+LINKER=$(PATH)sys/linker.ld
+START_S=$(PATH)sys/start.S
+START_O=$(PATH)sys/start.o
+
+CFLAGS = $(INCS:%=-I%)
+#CFLAGS +=-I$(INCS)
+ 
+
+SRCS=$(wildcard $(PATH)/src/*.c)
+OBJS=$(SRCS:.c=.o)
+
+all: $(TARGET)
+
+$(START_O):$(START_S)
+	$(CC) $(CFLAGS) -c $(START_S) -o $(START_O)
+
+$(PATH)src/%.o:$(PATH)src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@  
+
+kernel8.elf: $(OBJS) $(LINKER) $(START_O)
+	$(CROSS)ld -nostdlib -nostartfiles $(START_O) $(OBJS) -T $(LINKER) -Map linker.map -o $@
+
+$(TARGET): kernel8.elf
+	$(CROSS)objcopy -O binary $< $@
+
+clean:
+	rm $(OBJS) kernel8.img linker.map kernel8.elf $(START_O)
+	
+	
